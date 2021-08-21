@@ -1,0 +1,19 @@
+<div>
+    Add Subject for Semester {{data.semester}}
+    <form [formGroup]="addSubjectFormGroup">
+        <mat-form-field appearance="outline">
+            <mat-label>Course</mat-label>
+            <input matInput formControlName="Course">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Credit</mat-label>
+            <mat-select formControlName="Credit">
+                <mat-option *ngFor="let credit of CreditValues" [value]="credit">
+                    {{credit}}
+                </mat-option>
+            </mat-select>
+            
+        </mat-form-field>
+        <button mat-raised-button (click)="addSubject()" color="accent">Add Subject</button>
+    </form>
+</div>
